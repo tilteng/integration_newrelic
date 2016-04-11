@@ -67,7 +67,8 @@ class MetricsAggregateSplitter(BaseETL):
                 num_in_group = int(s[u'value'] * self._fudge_ratio)
                 ranges[group][s[u'name']] = (so_far, so_far + num_in_group)
                 for i in range(so_far, so_far + num_in_group):
-                    self._events[i].set(group, s[u'name'])
+                    if i < len(self._events):
+                        self._events[i].set(group, s[u'name'])
 
                 so_far += num_in_group
 
