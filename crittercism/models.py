@@ -56,7 +56,8 @@ class CRErrorBase(object):
         self._oldest_available = None
         self._tz_offset = self._data[u'appTimeZoneOffset']
         self._todays_date = (datetime.utcnow() + timedelta(hours=self._tz_offset))
-        self._latest_complete_date, self.date_map = self.build_date_map()
+        if 'total' in hash_init['dailyOccurrencesByVersion']:
+            self._latest_complete_date, self.date_map = self.build_date_map()
         self._today_partial_occurrences = self.latest_occurrences_by_version()
 
     def latest_complete_date_occurrences(self):
