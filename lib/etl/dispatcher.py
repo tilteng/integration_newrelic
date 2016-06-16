@@ -32,6 +32,7 @@ class ETLDispatcher(object):
     ALL_ETL = {
         'Aggregates': PerformanceMetricsETL,
         'Exception': ExceptionETL,
+        'Transactions': TransactionsETL,
         'Crash': CrashETL,
         'App Load': AppLoadETL,
     }
