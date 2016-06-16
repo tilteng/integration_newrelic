@@ -15,6 +15,7 @@ class BaseETL(object):
             'client_id': os.environ.get('CR_CLIENT_ID'),
             'username': os.environ.get('CR_USERNAME'),
             'password': os.environ.get('CR_PASSWORD'),
+            'token': os.environ.get('CR_OAUTH_TOKEN'),
         })
 
     def unpacked_events(self):
