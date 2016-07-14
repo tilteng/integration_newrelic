@@ -30,9 +30,6 @@ class ETLDispatcher(object):
                                                                 for i in range(min(10, num_events))])
 
     ALL_ETL = {
-        'Aggregates': PerformanceMetricsETL,
-        'Exception': ExceptionETL,
-        'Transactions': TransactionsETL,
         'Crash': CrashETL,
         'App Load': AppLoadETL,
     }
